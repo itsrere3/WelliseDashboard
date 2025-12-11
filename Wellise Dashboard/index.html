@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="header">
+    <div class="logo" aria-label="Wellise Health Dashboard Logo">
+        <span class="star">★</span> WELLiSE
+    </div>
+
+    <div class="nav">
+        <button tabindex="0" aria-label="Go to Task Manager" onclick="showNotification('You are now in Task Manager.')">TASK MANAGER</button>
+        <button tabindex="0" aria-label="Go to Goal Tracker" onclick="showNotification('You are now in Goal Tracker.')">GOAL TRACKER</button>
+        <button tabindex="0" aria-label="Go to Home page" onclick="showNotification('You are now at Home page.')">HOME</button>
+        <button tabindex="0" aria-label="Go to Reminders & Notifications" onclick="showNotification('You are now in Reminders & Notifications.')">REMINDERS & NOTIFICATIONS</button>
+        <button tabindex="0" onclick="showQuote(); showNotification('Showing motivational quote.')">MOTIVATIONAL SECTION</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+        <h2>Welcome to Wellise</h2>
+        <p>Your journey to deeper well-being starts here!</p>
+    </div>
+
+    <div class="journal-section">
+        <p class="journal-title">JOURNAL</p>
+        <textarea class="journal-box" placeholder="Write your journal" aria-label="Journal writing area"></textarea>
+        <button onclick="saveJournal(); showNotification('Journal entry saved!')">Save Journal</button>
+    </div>
+
+    <div id="quoteBox" class="quote-box">
+        <button class="close-btn" onclick="closeQuote()" tabindex="0" aria-label="Close Motivational Quote">✕</button>
+        <p id="quoteText"></p>
+    </div>
+
+    <div class="image-container">
+        <img src="PW.jpg" alt="Enhance your physical, mental, and emotional well-being">
+        <div class="image-caption">
+            Enhance your physical, mental, and emotional well-being
+        </div>
+    </div>
+
+    <div class="settings-bar">
+        <span class="settings-icon" aria-hidden="true" aria-label="Settings Icon">⚙</span>
+        <button onclick="toggleDarkMode(); showNotification('Dark Mode is now enabled.')" tabindex="0" aria-label="Toggle Dark Mode">DARK MODE</button>
+        <button onclick="showTextSizeOptions();" tabindex="0" aria-label="Change Text Size">TEXT SIZE</button>
+    </div>
+
+    <div id="textSizeOptions" class="text-size-options">
+        <button onclick="setTextSize('14px'); showNotification('Text size set to small.')" aria-label="Set text size to small">Small</button>
+        <button onclick="setTextSize('18px'); showNotification('Text size set to medium.')" aria-label="Set text size to medium">Medium</button>
+        <button onclick="setTextSize('22px'); showNotification('Text size set to large.')" aria-label="Set text size to large">Large</button>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
